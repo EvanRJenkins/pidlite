@@ -7,7 +7,9 @@ struct pidLite_Config {
   // Setpoint and process value
   double SP, PV;
   // Proportinal, integral, derivative terms
-  double Pval, Ival, Out;
+  double Pval, Ival;
+  // Control Value (Mathematical output)
+  double CV;
   // Gain factors
   const double Pgain, Igain;
 };

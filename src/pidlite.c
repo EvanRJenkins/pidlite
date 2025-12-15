@@ -49,5 +49,5 @@ void pidLite_update(struct pidLite_Config *PID) {
   // Calculate I term
   pidLite_getI(PID, new_error);
   // Sum terms and update output
-  PID->Out = PID->Pval + PID->Ival;
+  PID->CV = PID->Pval + PID->Ival;
 }
