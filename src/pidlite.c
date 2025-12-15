@@ -55,14 +55,13 @@ void pidL_Update(struct pidL_Config *PID) {
   // Sum terms and Update output
   pidL_t sum = (PID->PTerm + PID->ITerm);
   // Normalize sum
-  pidL_t norm = ((sum - NORM_MIN) / (NORM_MAX - NORM_MIN));
-  // Clip norm if outside of range
-  if (norm > NORM_MAX) {
-    norm = NORM_MAX; 
+  pidL_t scaled = (sum / SCALE_FACTOR);
+  if (scaled > SCALE_MAX) {
+    scaled = SCALE_MAX;
   }
-  else if (norm < NORM_MIN) {
-    norm = NORM_MIN;
+  else if (scaled < SCALE_MIN) {
+    scaled = SCALE_MIN;
   }
-  // Give normalized value to CV
-  PID->CV = norm;
+  // Give scaled value to CV
+  PID->CV = scaled;
 }

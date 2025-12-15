@@ -18,13 +18,9 @@ use float instead of double
 Constant definitions for math.
 Change at your own risk!
 */
-#ifdef CENTERED
-  #define NORM_MIN -1000.0
-  #define NORM_MAX 1000.0
-#else
-  #define NORM_MIN 0.0
-  #define NORM_MAX 1000.0
-#endif 
+#define SCALE_FACTOR 10000.0
+#define SCALE_MIN -0.5
+#define SCALE_MAX 0.5
 /*
 Config struct for pid lib
 */

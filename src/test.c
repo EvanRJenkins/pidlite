@@ -3,7 +3,7 @@
 //
 int main(void) {
   struct pidL_Config PID = {
-    .PV = 0.0,
+    .PV = 50.0,
     .SP = 0.0,
     .CV = 0.0,
     .PGain = 10.0,
