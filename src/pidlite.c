@@ -64,3 +64,10 @@ void pidL_Update(struct pidL_Config *PID) {
   // Give scaled value to CV
   PID->CV = scaled;
 }
+/*
+Zero PTerm, ITerm
+*/
+void pidL_ClearTerms(struct pidL_Config * PID) {
+  PID->PTerm = 0.0;
+  PID->ITerm = 0.0;
+}

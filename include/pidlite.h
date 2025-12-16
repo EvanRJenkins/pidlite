@@ -60,5 +60,5 @@ Update tarGet pid
 */
 void pidL_Update(struct pidL_Config *PID);
 //
-pidL_t pidL_Compute(struct pidL_Config *PID);
+void pidL_ClearTerms(struct pidL_Config *PID);
 #endif
