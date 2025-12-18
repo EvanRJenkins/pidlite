@@ -51,7 +51,6 @@ void pidL_Update(struct pidL_Config *PID) {
   pidL_GetP(PID, new_error);
   // Calculate I term
   pidL_GetI(PID, new_error);
-  printf("P: %f     I: %f\n", PID->PTerm, PID->ITerm);
   // Sum terms and Update output
   pidL_t sum = (PID->PTerm + PID->ITerm);
   // Normalize sum
@@ -64,4 +63,11 @@ void pidL_Update(struct pidL_Config *PID) {
   }
   // Give scaled value to CV
   PID->CV = scaled;
+}
+/*
+Adjust PV of target pidL
+*/
+void pidL_Adjust(struct pidL_Config *PID, pidL_t adjustment_factor)
+{
+    PID->PV += PID->CV * adjustment_factor;
 }
